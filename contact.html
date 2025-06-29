@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - RP School</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    @keyframes loading {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .loader span {
+      animation: loading 0.6s infinite alternate;
+    }
+    .loader span:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+    <div class="loader flex space-x-2">
+      <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
+      <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed top-0 left-0 w-full z-40">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="text-xl font-bold">Académie pompidou</div>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="hover:text-blue-600 transition-all">Accueil</a>
+      <a href="À propos.html" class="hover:text-blue-600 transition-all">À propos</a>
+      <a href="étab.html" class="hover:text-blue-600 transition-all">Établissements</a>
+      <a href="services.html" class="hover:text-blue-600 transition-all">Services</a>
+      <a href="contact.html" class="hover:text-blue-600 transition-all">Contact</a>
+    </nav>
+    <div class="md:hidden">
+      <button id="menuToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+    <a href="index.html" class="block py-1">Accueil</a>
+    <a href="À propos.html" class="block py-1">À propos</a>
+    <a href="étab.html" class="block py-1">Établissements</a>
+    <a href="services.html" class="block py-1">Services</a>
+    <a href="contact.html" class="block py-1">Contact</a>
+  </div>
+</header>
+
+  <!-- Main Content -->
+  <main class="pt-24 max-w-3xl mx-auto px-4">
+    <h1 class="text-3xl font-bold text-center mb-10">Contactez RP School</h1>
+
+    <section class="bg-white p-8 rounded-lg shadow-md space-y-6 text-center">
+      <p class="text-lg">
+        Pour toute question ou renseignement, vous pouvez contacter l'académie par téléphone ou via le lien ci-dessous.
+      </p>
+
+      <div class="flex items-center justify-center space-x-3 text-blue-600 text-xl font-semibold">
+        <i class="fas fa-phone-alt"></i>
+        <a href="tel:+33412120605" class="hover:underline">04 12 12 06 05</a>
+      </div>
+
+      <div>
+        <a href="https://discord.gg/c8CYcSREqa" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+          Rejoindre notre serveur Discord
+          <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => document.getElementById('loader').style.display = 'none', 1000);
+    });
+
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

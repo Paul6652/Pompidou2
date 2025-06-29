@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service - RP School</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @keyframes loading {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .loader span {
+      animation: loading 0.6s infinite alternate;
+    }
+    .loader span:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+    <div class="loader flex space-x-2">
+      <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
+      <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed top-0 left-0 w-full z-40">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="text-xl font-bold">Académie pompidou</div>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="hover:text-blue-600 transition-all">Accueil</a>
+      <a href="À propos.html" class="hover:text-blue-600 transition-all">À propos</a>
+      <a href="étab.html" class="hover:text-blue-600 transition-all">Établissements</a>
+      <a href="services.html" class="hover:text-blue-600 transition-all">Services</a>
+      <a href="contact.html" class="hover:text-blue-600 transition-all">Contact</a>
+    </nav>
+    <div class="md:hidden">
+      <button id="menuToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+    <a href="index.html" class="block py-1">Accueil</a>
+    <a href="À propos.html" class="block py-1">À propos</a>
+    <a href="étab.html" class="block py-1">Établissements</a>
+    <a href="services.html" class="block py-1">Services</a>
+    <a href="contact.html" class="block py-1">Contact</a>
+  </div>
+</header>
+
+  <!-- Main Content -->
+  <main class="pt-24 max-w-6xl mx-auto px-4">
+    <h1 class="text-3xl font-bold text-center mb-10">Nos Services</h1>
+
+    <div class="text-center mb-8">
+      <p class="text-xl font-semibold text-blue-600">De nouveaux services arrivent prochainement !</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-1">
+        <div class="text-blue-500 text-4xl mb-4 text-center"><i class="fas fa-calendar-alt"></i></div>
+        <h3 class="text-lg font-semibold text-center mb-2">Pronote RP</h3>
+        <p class="text-sm text-gray-600 text-center">Un système de suivi des absences, notes et emplois du temps en RolePlay.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-1">
+        <div class="text-blue-500 text-4xl mb-4 text-center"><i class="fas fa-robot"></i></div>
+        <h3 class="text-lg font-semibold text-center mb-2">Bot Académique</h3>
+        <p class="text-sm text-gray-600 text-center">Automatisation des inscriptions, gestion des membres et notifications RP.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-1">
+        <div class="text-blue-400 text-4xl mb-4 text-center"><i class="fas fa-plus-circle"></i></div>
+        <h3 class="text-lg font-semibold text-center mb-2">À venir...</h3>
+        <p class="text-sm text-gray-600 text-center">De nouveaux services innovants RP sont en développement !</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => document.getElementById('loader').style.display = 'none', 1000);
+    });
+
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
+
