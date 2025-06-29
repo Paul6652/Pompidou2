@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Établissements - RP School</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @keyframes loading {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .loader span {
+      animation: loading 0.6s infinite alternate;
+    }
+    .loader span:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+    <div class="loader flex space-x-2">
+      <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
+      <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed top-0 left-0 w-full z-40">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="text-xl font-bold">Académie pompidou</div>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="hover:text-blue-600 transition-all">Accueil</a>
+      <a href="À propos.html" class="hover:text-blue-600 transition-all">À propos</a>
+      <a href="étab.html" class="hover:text-blue-600 transition-all">Établissements</a>
+      <a href="services.html" class="hover:text-blue-600 transition-all">Services</a>
+      <a href="contact.html" class="hover:text-blue-600 transition-all">Contact</a>
+    </nav>
+    <div class="md:hidden">
+      <button id="menuToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+    <a href="index.html" class="block py-1">Accueil</a>
+    <a href="À propos.html" class="block py-1">À propos</a>
+    <a href="étab.html" class="block py-1">Établissements</a>
+    <a href="services.html" class="block py-1">Services</a>
+    <a href="contact.html" class="block py-1">Contact</a>
+  </div>
+</header>
+
+  <!-- Main Content -->
+  <main class="pt-24 max-w-6xl mx-auto px-4 space-y-8">
+    <div class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-lg font-bold mb-4">Établissements déjà admis</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="https://discord.gg/sgUx3Z624p" target="_blank" class="card bg-gray-50 rounded-lg p-4 hover:bg-blue-50 transition">
+          <div class="text-lg font-semibold text-blue-700"><i class="fas fa-university mr-2"></i>Ensemble Scolaire Parc de l'Aube</div>
+        </a>
+        <a href="https://discord.gg/DzwKJzAwN9" target="_blank" class="card bg-gray-50 rounded-lg p-4 hover:bg-blue-50 transition">
+          <div class="text-lg font-semibold text-blue-700"><i class="fas fa-university mr-2"></i>Collège Louis bouland </div>
+        </a>
+        <a href="https://discord.gg/Huyfa7MtkX" target="_blank" class="card bg-gray-50 rounded-lg p-4 hover:bg-blue-50 transition">
+          <div class="text-lg font-semibold text-blue-700"><i class="fas fa-university mr-2"></i>Collège Keiresse </div>
+        </a>
+         <a href="https://discord.gg/fYWkVhDh2E" target="_blank" class="card bg-gray-50 rounded-lg p-4 hover:bg-blue-50 transition">
+          <div class="text-lg font-semibold text-blue-700"><i class="fas fa-university mr-2"></i> Albert School </div>
+        </a>
+      </div>
+      <a href="https://discord.gg/c8CYcSREqa" target="_blank" class="mt-6 inline-block text-blue-600 font-medium hover:underline">Rejoindre notre serveur Discord</a>
+    </div>
+  </main>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => document.getElementById('loader').style.display = 'none', 1000);
+    });
+
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

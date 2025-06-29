@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos - RP School</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @keyframes loading {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .loader span {
+      animation: loading 0.6s infinite alternate;
+    }
+    .loader span:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+    <div class="loader flex space-x-2">
+      <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
+      <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+ <header class="bg-white shadow-md fixed top-0 left-0 w-full z-40">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="text-xl font-bold">Académie pompidou</div>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="hover:text-blue-600 transition-all">Accueil</a>
+      <a href="À propos.html" class="hover:text-blue-600 transition-all">À propos</a>
+      <a href="étab.html" class="hover:text-blue-600 transition-all">Établissements</a>
+      <a href="services.html" class="hover:text-blue-600 transition-all">Services</a>
+      <a href="contact.html" class="hover:text-blue-600 transition-all">Contact</a>
+    </nav>
+    <div class="md:hidden">
+      <button id="menuToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+    <a href="index.html" class="block py-1">Accueil</a>
+    <a href="À propos.html" class="block py-1">À propos</a>
+    <a href="étab.html" class="block py-1">Établissements</a>
+    <a href="services.html" class="block py-1">Services</a>
+    <a href="contact.html" class="block py-1">Contact</a>
+  </div>
+</header>
+
+  <!-- Main Content -->
+  <main class="pt-24 max-w-5xl mx-auto px-4 space-y-8">
+    <h1 class="text-3xl font-bold text-center">À propos de l'Académie RP School</h1>
+
+    <section class="bg-white p-6 rounded-lg shadow-md">
+      <p class="text-gray-700 leading-relaxed">
+        RP School est une académie virtuelle dédiée à l'apprentissage, l'organisation et la gestion de projets RolePlay (RP).
+        Notre mission est de centraliser les établissements RP dans un réseau structuré et professionnel où chaque acteur du RP
+        peut évoluer, apprendre et collaborer.
+      </p>
+      <p class="mt-4 text-gray-700">
+        Nous offrons une plateforme pour administrer des établissements, proposer des services éducatifs RP, et assurer
+        un encadrement de qualité grâce à une équipe dédiée. Notre engagement est de créer une expérience immersive,
+        respectueuse et enrichissante pour tous.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => document.getElementById('loader').style.display = 'none', 1000);
+    });
+
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
+
